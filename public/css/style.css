@@ -1,5 +1,5 @@
 body{
-	background-color: hsl(246, 80%, 60%);
+	background-color: hsl(235, 46%, 20%)
 }
 
 .user{
@@ -8,4 +8,14 @@ body{
 
 .info{
 	background-color: blue;
+}
+
+.options{
+	display: grid;
+	align-items: center;
+	justify-content: center;
+}
+
+.borda{
+	background-color: brown;
 }
