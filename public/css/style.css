@@ -1,21 +1,115 @@
 body{
-	background-color: hsl(235, 46%, 20%);
+	background-color: hsl(226, 43%, 10%);
 }
 
-.user{
-	background-color: blue;
+@font-face {
+	font-family: 'Rubik';
+	src: url('../fonts/Rubik-VariableFont_wght.ttf') format('truetype');
 }
 
-.info{
-	background-color: blue;
+@font-face {
+	font-family: 'Rubik-light';
+	src: url('../fonts/Rubik-Light.ttf') format('truetype');
+}
+
+p{
+	font-family: 'Rubik';
+}
+
+h1{
+	font-family:'Rubik';
+	margin-top: 0px;
+	color: white;
+}
+
+h3{
+	font-family:'Rubik';
+}
+
+h4{
+	font-family:'Rubik';
+}
+
+.col-4{
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile{
+	background-color: hsl(246, 80%, 60%);
+	padding-left: 40px;
+	padding-top: 40px;
+	width: 300px;
+	padding-bottom: 60px;
+	border-radius: 10px;
+}
+
+.legend{
+	margin-top: 40px;
+	margin-bottom: 0px;
+	color: hsl(235, 45%, 61%);
+	font-size: 16pt;
 }
 
 .options{
+	width: 300px;
 	display: grid;
-	align-items: center;
-	justify-content: center;
+	background-color: hsl(235, 46%, 20%);
+	padding-left: 40px;
+	padding-top: 20px;
+	border-radius: 0px 0px 10px 10px;
 }
 
-.borda{
-	background-color: brown;
+.mode{
+	color: hsl(235, 45%, 61%);
+}
+
+/* Cards */
+
+.card-options{
+	display: flex;
+}
+
+.sub-menu{
+	margin-left: 40%;
+	font-size: 18pt;
+}
+
+.title{
+	font-size: 18px;
+	color: hsl(236, 100%, 87%);
+}
+
+.current{
+	color: hsl(236, 100%, 87%);
+	font-weight:lighter;
+	font-family: 'Rubik-Light';
+	font-size: 38pt;
+	margin-bottom: 0px;
+}
+
+.previous{
+	color: hsl(235, 45%, 61%);
+	font-size: 12pt;
+	margin-top: 0px;
+}
+
+.card{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-radius: 20px;
+	background-color: hsl(235, 46%, 20%);
+	padding-left: 30px;
+}
+
+.border{
+	background-color: hsl(15, 100%, 70%);
+	padding-top: 40px;
+	border-radius: 20px;
+	border-style: none;
+	/* color: hsl(235, 45%, 61%);
+	color: hsl(236, 100%, 87%);
+	color: hsl(235, 46%, 20%);
+	color: hsl(246, 80%, 60%); */
 }

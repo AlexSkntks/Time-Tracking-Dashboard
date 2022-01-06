@@ -3,42 +3,22 @@ let app = express();
 let port = 3000;
 const path  = require("path");
 
-/**
- * Trabalhando com JSON
- */
-
-const items = [
-	{
-		title: "A",
-		message: "Alguma coisa"
-	},
-	{
-		title: "B",
-		message: "Borboleta"
-	},
-	{
-		title: "C",
-		message: "Cachorro"
-	},
-	{
-		title: "D",
-		message: "Dinossauro"
-	}
-];
+app.use(express.static(path.join(__dirname,"public")));
 
 app.set("view engine", "ejs");
 
+//A variável data contém o array de objetos de data.json
+const data = require(__dirname + "/public/json/data.json");
+
 app.get('/', (req, res) => {
 	res.render("pages/index", {
-		messages: items
+		data: data
 	});
 });
 
 app.get('/sobre', (req, res) =>{
 	res.render("pages/sobre");
 });
-
-app.use(express.static(path.join(__dirname,"public")))
 
 app.listen(port, () => {
 	console.log(`Servidor rodando em http://localhost:${port}`)
