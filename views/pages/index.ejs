@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
 
-	<%- include('../partials/head') %>
+	<%- include('../partials/head', {pagina: 'time tracking'}) %>
 	<body>
 		<header></header>
 		<main>
@@ -20,7 +20,13 @@
 							<p>Monthly</p>
 						</div>
 					</div>
-					<div class="col-8" style="background-color: blueviolet;">b</div>
+					<div class="col-8" style="background-color: blueviolet;">
+					<ul>
+						<% messages.forEach(function(item){ %>
+							<li> <%= item.title %> </li> <%= item.message %>
+						<%}) %>
+					</ul>
+					</div>
 				</div>
 				
 			</div>
