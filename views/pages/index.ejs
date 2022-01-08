@@ -8,7 +8,7 @@
 
 			<div class="container" style="padding-top: 100px;">
 				<div class="row">
-					<div class="col-4" style="background-color: cadetblue;">
+					<div class="col-4">
 						<div class="profile">
 							<img src="/images/image-jeremy.png" alt="Imagem do perfil" width="70px">
 							<p class="legend">Report for</p>
@@ -20,75 +20,28 @@
 							<p class="mode">Monthly</p>
 						</div>
 					</div>
-					<div class="col-8" style="background-color: chocolate;">
-						<div class="row row-cols-3 gy-5" style="background-color: transparent;">
-							<div class="col">
-								<div class="border">
-									<div class="card">
-										<!-- Colocando os três pontinhos de sub-menu -->
-										<div class="card-options">
-											<p class="title"><b>Work</b></p>
-											<span class="sub-menu">...</span>
+					<div class="col-8">
+						<div class="row row-cols-3 gy-5">
+							<% data.forEach(function(info){%>
+								<div class="col">
+									<!-- Cada coluna tem cor e imagem definidas pela informação que vem do server-side  -->
+									<!-- O linear-gradient é para que a corzinha do detalhe não fique com uma pontinha sobrando embaixo -->
+									<div id="det" class="details" style="background-image: linear-gradient(<%= info.color %>, <%= info.color %>, hsl(226, 43%, 10%), hsl(226, 43%, 10%));" onclick="changeImg()">
+										<img class="img-icon" src="/images/<%=info.icon%>">
+										<div class="card">
+											<!-- Colocando os três pontinhos de sub-menu -->
+											<div class="card-options">
+												<p class="title"><b><%= info.title %></b></p>
+												<img class="more" src="/images/more.png">
+											</div>
+											<p class="current"><%= info.timeframes.daily.current %>hrs</p>
+											<p class="previous">Last day - <%= info.timeframes.daily.previous %>hrs</p>
 										</div>
-										<p class="current">32hrs</p>
-										<p class="previous">Last day - 7hrs</p>
 									</div>
 								</div>
-							</div>
-							<div class="col">
-								<div class="border">
-									<div class="card">
-										<p class="title">Work</p>
-										<h3 class="current">5hrs</h3>
-										<h4 class="previous">Last day - 7hrs</h4>
-									</div>
-								</div>
-							</div>
-							<div class="col">
-								<div class="border">
-									<div class="card">
-										<p class="title">Work</p>
-										<h3 class="current">5hrs</h3>
-										<h4 class="previous">Last day - 7hrs</h4>
-									</div>
-								</div>
-							</div>
-							<div class="col">
-								<div class="border">
-									<div class="card">
-										<p class="title">Work</p>
-										<h3 class="current">5hrs</h3>
-										<h4 class="previous">Last day - 7hrs</h4>
-									</div>
-								</div>
-							</div>
-							<div class="col">
-								<div class="border">
-									<div class="card">
-										<p class="title">Work</p>
-										<h3 class="current">5hrs</h3>
-										<h4 class="previous">Last day - 7hrs</h4>
-									</div>
-								</div>
-							</div>
-							<div class="col">
-								<div class="border">
-									<div class="card">
-										<p class="title">Work</p>
-										<h3 class="current">5hrs</h3>
-										<h4 class="previous">Last day - 7hrs</h4>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<div style="display: none;">
-							<% data.forEach(function(info){ %>
-								<p class="title"> <%= info.title %> </p>
-								<h3 class="current"><%= info.timeframes.daily.current %></h3>
-								<h4 class="previous"><%= info.timeframes.daily.previous %></h4>
 							<%}) %>
 						</div>
+						
 					</div>
 				</div>
 				

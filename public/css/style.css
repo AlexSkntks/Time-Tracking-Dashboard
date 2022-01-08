@@ -42,7 +42,8 @@ h4{
 	padding-top: 40px;
 	width: 300px;
 	padding-bottom: 60px;
-	border-radius: 10px;
+	border-radius: 20px;
+	height: 100%;
 }
 
 .legend{
@@ -53,12 +54,13 @@ h4{
 }
 
 .options{
-	width: 300px;
 	display: grid;
 	background-color: hsl(235, 46%, 20%);
 	padding-left: 40px;
+	border-radius: 0px 0px 20px 20px;
+	height: 100%;
 	padding-top: 20px;
-	border-radius: 0px 0px 10px 10px;
+	padding-left: 40px;
 }
 
 .mode{
@@ -71,13 +73,14 @@ h4{
 	display: flex;
 }
 
-.sub-menu{
-	margin-left: 40%;
-	font-size: 18pt;
+.more{
+	margin-left: 50%;
+	width: 30px;
+	margin-bottom: 15px;
 }
 
 .title{
-	font-size: 18px;
+	font-size: 20px;
 	color: hsl(236, 100%, 87%);
 }
 
@@ -91,25 +94,31 @@ h4{
 
 .previous{
 	color: hsl(235, 45%, 61%);
-	font-size: 12pt;
+	font-size: 14pt;
 	margin-top: 0px;
 }
 
 .card{
 	padding-top: 20px;
-	padding-bottom: 20px;
-	border-radius: 20px;
+	padding-bottom: 0px;
+	border-radius: 20px 20px 20px 20px;
 	background-color: hsl(235, 46%, 20%);
 	padding-left: 30px;
 }
 
-.border{
-	background-color: hsl(15, 100%, 70%);
-	padding-top: 40px;
-	border-radius: 20px;
-	border-style: none;
+.details{
+	border-radius: 20px 20px 0px 0px;
 	/* color: hsl(235, 45%, 61%);
 	color: hsl(236, 100%, 87%);
 	color: hsl(235, 46%, 20%);
 	color: hsl(246, 80%, 60%); */
+	overflow: hidden;
+	padding-top: 20px;
+}
+
+.img-icon{
+	width: 60px;
+	margin-left: 70%;
+	margin-top: -35px;
+	margin-bottom: -30px;
 }
