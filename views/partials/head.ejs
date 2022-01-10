@@ -9,4 +9,24 @@
 
 	<!--Recebedo um objeto de outro arquivo EJS-->
     <title><%= typeof pagina != 'undefined' ? pagina : 'Home' %></title>
+	<script>
+		function changeData(mode) {
+			let d1 = document.getElementById('data1');
+			let d2 = document.getElementById('data2');
+			let d3 = document.getElementById('data3');
+			if(mode === "1"){
+				d1.style.display = "";
+				d2.style.display = "none";
+				d3.style.display = "none";
+			} else if(mode === "2"){
+				d1.style.display = "none";
+				d2.style.display = "";
+				d3.style.display = "none";
+			} else if(mode === "3"){
+				d1.style.display = "none";
+				d2.style.display = "none";
+				d3.style.display = "";
+			}	
+		}
+	</script>
 </head>

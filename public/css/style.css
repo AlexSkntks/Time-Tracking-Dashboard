@@ -30,20 +30,32 @@ h4{
 	font-family:'Rubik';
 }
 
+.nav-link{
+	color: hsl(235, 45%, 61%);
+}
+
+/**
+** Fazer responsividade
+*/
+
+.nav-link:hover{
+	color: aliceblue;
+}
+
 .col-4{
 	display: grid;
-	justify-content: center;
+	justify-content: end;
 	align-items: center;
 }
 
 .profile{
 	background-color: hsl(246, 80%, 60%);
-	padding-left: 40px;
+	border-radius: 20px 20px 20px 20px;
 	padding-top: 40px;
-	width: 300px;
-	padding-bottom: 60px;
-	border-radius: 20px;
-	height: 100%;
+	padding-left: 30px;
+	padding-right: 80px;
+	padding-bottom: 50px;
+	margin-bottom: 30px;
 }
 
 .legend{
@@ -53,18 +65,15 @@ h4{
 	font-size: 16pt;
 }
 
-.options{
-	display: grid;
+.menu{
 	background-color: hsl(235, 46%, 20%);
-	padding-left: 40px;
-	border-radius: 0px 0px 20px 20px;
 	height: 100%;
-	padding-top: 20px;
-	padding-left: 40px;
+	border-radius: 20px 20px 20px 20px;
 }
 
 .mode{
 	color: hsl(235, 45%, 61%);
+	padding-left: 40px;
 }
 
 /* Cards */
@@ -82,6 +91,7 @@ h4{
 .title{
 	font-size: 20px;
 	color: hsl(236, 100%, 87%);
+	width: auto;
 }
 
 .current{
@@ -103,15 +113,11 @@ h4{
 	padding-bottom: 0px;
 	border-radius: 20px 20px 20px 20px;
 	background-color: hsl(235, 46%, 20%);
-	padding-left: 30px;
+	padding-left: 20px;
 }
 
 .details{
 	border-radius: 20px 20px 0px 0px;
-	/* color: hsl(235, 45%, 61%);
-	color: hsl(236, 100%, 87%);
-	color: hsl(235, 46%, 20%);
-	color: hsl(246, 80%, 60%); */
 	overflow: hidden;
 	padding-top: 20px;
 }

@@ -6,45 +6,119 @@
 		<header></header>
 		<main>
 
-			<div class="container" style="padding-top: 100px;">
+			<div class="container" style="margin-top: 100px;">
 				<div class="row">
 					<div class="col-4">
-						<div class="profile">
-							<img src="/images/image-jeremy.png" alt="Imagem do perfil" width="70px">
-							<p class="legend">Report for</p>
-							<h1>Jeremy Robson</h1>
-						</div>
-						<div class="options">
-							<p class="mode">Daily</p>
+						<div class="menu">
+							<div class="profile">
+								<img src="/images/image-jeremy.png" alt="Imagem do perfil" width="70px">
+								<p class="legend">Report for</p>
+								<h1>Jeremy<br> Robson</h1>
+							</div>
+							<ul>
+								<li class="nav-item">
+									<a onclick="changeData('1')" class="nav-link active" aria-current="page" href="#">Daily</a>
+								</li>
+								<li class="nav-item">
+									<a onclick="changeData('2')" class="nav-link active" aria-current="page" href="#">Weekly</a>
+								</li>
+								<li class="nav-item">
+									<a onclick="changeData('3')" class="nav-link active" aria-current="page" href="#">Monthly</a>
+								</li>
+							</ul>
+							
+							<!-- <p class="mode nav-link active">Daily</p>
 							<p class="mode">Weekly</p>
-							<p class="mode">Monthly</p>
+							<p class="mode">Monthly</p> -->
 						</div>
 					</div>
 					<div class="col-8">
-						<div class="row row-cols-3 gy-5">
+						<div id="data1" class="row row-cols-3 gy-4 gx-4">
 							<% data.forEach(function(info){%>
-								<div class="col">
+								<div class="col" style="background-color: <%=info.color%>;">
 									<!-- Cada coluna tem cor e imagem definidas pela informação que vem do server-side  -->
 									<!-- O linear-gradient é para que a corzinha do detalhe não fique com uma pontinha sobrando embaixo -->
-									<div id="det" class="details" style="background-image: linear-gradient(<%= info.color %>, <%= info.color %>, hsl(226, 43%, 10%), hsl(226, 43%, 10%));" onclick="changeImg()">
+									<div id="det" class="details"
+										style="background-image: linear-gradient(<%= info.color %>, <%= info.color %>, hsl(226, 43%, 10%), hsl(226, 43%, 10%));">
 										<img class="img-icon" src="/images/<%=info.icon%>">
 										<div class="card">
 											<!-- Colocando os três pontinhos de sub-menu -->
 											<div class="card-options">
-												<p class="title"><b><%= info.title %></b></p>
+												<p class="title"><b>
+														<%= info.title %>
+													</b></p>
 												<img class="more" src="/images/more.png">
 											</div>
-											<p class="current"><%= info.timeframes.daily.current %>hrs</p>
-											<p class="previous">Last day - <%= info.timeframes.daily.previous %>hrs</p>
+											<p class="current">
+												<%= info.timeframes.daily.current %>hrs
+											</p>
+											<p class="previous">
+												Last day - <%= info.timeframes.daily.previous %>hrs
+											</p>
 										</div>
 									</div>
 								</div>
-							<%}) %>
+							<%});%>
 						</div>
-						
+						<div id="data2" class="row row-cols-3 gy-4 gx-4" style="display: none;">
+							<% data.forEach(function(info){%>
+								<div class="col" style="background-color: <%=info.color%>;">
+									<!-- Cada coluna tem cor e imagem definidas pela informação que vem do server-side  -->
+									<!-- O linear-gradient é para que a corzinha do detalhe não fique com uma pontinha sobrando embaixo -->
+									<div id="det" class="details"
+										style="background-image: linear-gradient(<%= info.color %>, <%= info.color %>, hsl(226, 43%, 10%), hsl(226, 43%, 10%));">
+										<img class="img-icon" src="/images/<%=info.icon%>">
+										<div class="card">
+											<!-- Colocando os três pontinhos de sub-menu -->
+											<div class="card-options">
+												<p class="title"><b>
+														<%= info.title %>
+													</b></p>
+												<img class="more" src="/images/more.png">
+											</div>
+											
+											<p class="current">
+												<%= info.timeframes.weekly.current %>hrs
+											</p>
+											<p class="previous">
+												Last week - <%= info.timeframes.weekly.previous %>hrs
+											</p>
+										</div>
+									</div>
+								</div>
+							<%});%>
+						</div>
+					</div>
+					<div id="data3" class="row row-cols-3 gy-4 gx-4" style="display: none;">
+						<% data.forEach(function(info){%>
+							<div class="col" style="background-color: <%=info.color%>;">
+								<!-- Cada coluna tem cor e imagem definidas pela informação que vem do server-side  -->
+								<!-- O linear-gradient é para que a corzinha do detalhe não fique com uma pontinha sobrando embaixo -->
+								<div id="det" class="details"
+									style="background-image: linear-gradient(<%= info.color %>, <%= info.color %>, hsl(226, 43%, 10%), hsl(226, 43%, 10%));">
+									<img class="img-icon" src="/images/<%=info.icon%>">
+									<div class="card">
+										<!-- Colocando os três pontinhos de sub-menu -->
+										<div class="card-options">
+											<p class="title"><b>
+													<%= info.title %>
+												</b></p>
+											<img class="more" src="/images/more.png">
+										</div>
+										
+										<p class="current">
+											<%= info.timeframes.monthly.current %>hrs
+										</p>
+										<p class="previous">
+											Last month - <%= info.timeframes.monthly.previous %>hrs
+										</p>
+									</div>
+								</div>
+							</div>
+						<%});%>
 					</div>
 				</div>
-				
+				</div>
 			</div>
 		</main>
 		<footer></footer>
