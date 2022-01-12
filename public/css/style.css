@@ -1,5 +1,7 @@
 body{
 	background-color: hsl(226, 43%, 10%);
+	justify-content: center;
+	min-width: 375px;
 }
 
 @font-face {
@@ -17,7 +19,7 @@ p{
 }
 
 h1{
-	font-family:'Rubik';
+	font-family:'Rubik-Light';
 	margin-top: 0px;
 	color: white;
 }
@@ -48,12 +50,19 @@ h4{
 
 .profile{
 	background-color: hsl(246, 80%, 60%);
-	border-radius: 20px 20px 20px 20px;
+	border-radius: 20px;
 	padding-top: 40px;
 	padding-left: 30px;
 	padding-right: 80px;
 	padding-bottom: 50px;
 	margin-bottom: 30px;
+}
+
+.profile img{
+	border-style: solid;
+	border-color: white;
+	border-radius: 60px;
+	width: 80px;
 }
 
 .legend{
@@ -86,7 +95,7 @@ h4{
 }
 
 .title{
-	font-size: 20px;
+	font-size: auto;
 	color: hsl(236, 100%, 87%);
 	width: auto;
 }
@@ -124,6 +133,68 @@ h4{
 .img-icon{
 	width: 60px;
 	margin-left: 70%;
+	margin-top: -35px;
+	margin-bottom: -30px;
+}
+
+
+/* Tela Mobile */
+
+.profile-mb{
+	background-color: hsl(246, 80%, 60%); 
+	padding: 30px 50px 30px 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+}
+
+.profile-mb img{
+	margin-right: 20px;
+	border-style: solid;
+	border-color: white;
+	border-radius: 60px;
+}
+
+.profile-mb p{
+	color: hsl(236, 100%, 87%);
+	margin-bottom: 0px;
+}
+
+.profile-mb h1{
+	font-size: 18pt;
+	width: fit-content;
+}
+.menu-mb{
+	background-color: hsl(235, 46%, 20%);
+	border-radius: 0px 0px 20px 20px;
+}
+
+/*Cards Mobile*/
+
+.title-mb{
+	font-size: 18pt;
+	color: hsl(236, 100%, 87%);
+	width: auto;
+}
+
+.previous-mb{
+	color: hsl(235, 45%, 61%);
+	font-size: 14pt;
+	width: fit-content;
+}
+
+.current-mb{/*MUDA NADA*/
+	color: hsl(236, 100%, 87%);
+	font-weight:lighter;
+	font-family: 'Rubik-Light';
+	font-size: 30pt;
+	margin-top: -20px;
+}
+
+.img-icon-mb{
+	width: 60px;
+	margin-left: 80%;
 	margin-top: -35px;
 	margin-bottom: -30px;
 }

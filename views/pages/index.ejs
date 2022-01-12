@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="pt-br">
 
-	<%- include('../partials/head', {pagina: 'time tracking'}) %>
+	<%- include('../partials/head', {pagina: 'Time Tracking'}) %>
 	<body>
 		<header></header>
 		<main>
 
-			<div class="container" style="margin-top: 100px;">
-				<div class="row" style="background-color: aqua;">
+			<div class="container d-none d-lg-block" style="margin-top: 100px; padding-right: 180px;">
+				<div class="row">
 					<div class="col-4">
 						<div class="menu">
 							<div class="profile">
-								<img src="/images/image-jeremy.png" alt="Imagem do perfil" width="70px">
+								<img class="profile-img" src="/images/image-jeremy.png" alt="Imagem do perfil" width="70px">
 								<p class="legend">Report for</p>
 								<h1>Jeremy<br> Robson</h1>
 							</div>
@@ -26,7 +26,7 @@
 					</div>
 					<!-- Força as próximas colunas para uma próxima linha -->
 					<div class="w-100 d-none d-md-block d-lg-none"></div>
-					<div class="col-8" style="background-color: brown;">
+					<div class="col-8">
 						<div id="data1" class="row row-cols-3 gy-4 gx-4">
 							<% data.forEach(function(info){%>
 								<div class="w-100 d-none d-sm-block d-md-block d-lg-none"></div>
@@ -124,6 +124,129 @@
 							<%});%>
 						</div>
 					</div>
+				</div>
+			</div>
+
+			<!--^ Abaixo o código aparece para telas menores -->
+
+			<div class="container-fuid d-sm-block d-md-block d-lg-none" style="padding: 0px 5px 0px 5px;">
+				<div class="row gy-4">
+					<div class="col-12">
+						<div class="menu-mb">
+							<div class="profile-mb justify-content-between">
+								<img class="profile-img" src="/images/image-jeremy.png" alt="Imagem do perfil" width="70px">
+								<div style="display: block;">
+									<p>Report for</p>
+									<h1>Jeremy Robson</h1>
+								</div>
+							</div>
+							<nav class="nav justify-content-between">
+								<a id="bt1" onclick="changeData('1')" class="nav-link active" aria-current="true" href="#">Daily</a>
+								<a id="bt2" onclick="changeData('2')" class="nav-link" href="#">Weekly</a>
+								<a id="bt3" onclick="changeData('3')" class="nav-link" href="#">Monthly</a>
+							</nav>
+						</div>
+					</div>
+					<!-- Esta coluna é para dar um espaçamento entre o profile e os cards -->
+					<div class="col-12">
+
+					</div>
+				</div>
+				<div id="data-mb1" class="row gy-4">
+					<%data.forEach(function(info){%>
+						<div class="col-12">
+							<div id="det" class="details" style="background-image: linear-gradient(<%= info.color %>, <%= info.color %>, hsl(226, 43%, 10%), hsl(226, 43%, 10%));">
+								<img class="img-icon-mb" src="/images/<%=info.icon%>">
+								<div class="card">
+									<!-- Colocando os três pontinhos de sub-menu -->
+									<div class="container-fluid">
+										<div class="row row-cols-2 justify-content-between">
+											<div class="col">
+												<p class="title-mb"><b><%= info.title %></b></p>
+											</div>
+											<div class="col d-flex justify-content-end">
+												<img class="more" src="/images/icon-ellipsis.svg" style="margin-top: 10px;">
+											</div>
+											<div class="col">
+												<p class="current-mb">
+													<%= info.timeframes.daily.current %>hrs
+												</p>
+											</div>
+											<div class="col d-flex justify-content-end">
+												<p class="previous-mb">
+													Last day - <%= info.timeframes.daily.previous %>hrs
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<%})%>
+				</div>
+				<div id="data-mb2" class="row gy-4" style="display: none;">
+					<%data.forEach(function(info){%>
+						<div class="col-12">
+							<div id="det" class="details" style="background-image: linear-gradient(<%= info.color %>, <%= info.color %>, hsl(226, 43%, 10%), hsl(226, 43%, 10%));">
+								<img class="img-icon-mb" src="/images/<%=info.icon%>">
+								<div class="card">
+									<!-- Colocando os três pontinhos de sub-menu -->
+									<div class="container-fluid">
+										<div class="row row-cols-2 justify-content-between">
+											<div class="col">
+												<p class="title-mb"><b><%= info.title %></b></p>
+											</div>
+											<div class="col d-flex justify-content-end">
+												<img class="more" src="/images/icon-ellipsis.svg" style="margin-top: 10px;">
+											</div>
+											<div class="col">
+												<p class="current-mb">
+													<%= info.timeframes.weekly.current %>hrs
+												</p>
+											</div>
+											<div class="col d-flex justify-content-end">
+												<p class="previous-mb">
+													Last week - <%= info.timeframes.weekly.previous %>hrs
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<%})%>
+				</div>
+				<div id="data-mb3" class="row gy-4" style="display: none;">
+					<%data.forEach(function(info){%>
+						<div class="col-12">
+							<div id="det" class="details" style="background-image: linear-gradient(<%= info.color %>, <%= info.color %>, hsl(226, 43%, 10%), hsl(226, 43%, 10%));">
+								<img class="img-icon-mb" src="/images/<%=info.icon%>">
+								<div class="card">
+									<!-- Colocando os três pontinhos de sub-menu -->
+									<div class="container-fluid">
+										<div class="row row-cols-2 justify-content-between">
+											<div class="col">
+												<p class="title-mb"><b><%= info.title %></b></p>
+											</div>
+											<div class="col d-flex justify-content-end">
+												<img class="more" src="/images/icon-ellipsis.svg" style="margin-top: 10px;">
+											</div>
+											<div class="col">
+												<p class="current-mb">
+													<%= info.timeframes.monthly.current %>hrs
+												</p>
+											</div>
+											<div class="col d-flex justify-content-end">
+												<p class="previous-mb">
+													Last monthly - <%= info.timeframes.monthly.previous %>hrs
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<%})%>
 				</div>
 			</div>
 		</main>
