@@ -5,7 +5,7 @@ const hello = express.Router();
 //A variável data contém o array de objetos de data.json
 const data = require("../public/json/data.json");
 
-hello.get("/", async (req, res) => {
+hello.get("/hello", async (req, res) => {
 	res.json({message: "Hello world"});
 });
 
