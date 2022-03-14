@@ -6,7 +6,7 @@ const router = express.Router();
 const data = require("../public/json/data.json");
 
 router.get("/", async (req, res) => {
-	res.render("pages/index", {
+	res.render("../views/pages/index", {
 		data: data
 	});
 });
