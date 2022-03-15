@@ -6,7 +6,7 @@ const hello = express.Router();
 const data = require("../public/json/data.json");
 
 hello.get("/hello", async (req, res) => {
-	res.json({message: "Hello world"});
+	res.json(data);
 });
 
 module.exports = hello;
